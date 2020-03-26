@@ -1,0 +1,82 @@
+O nodemon é utilizado para atualizar automaticamente  a página, sem precisar dar ctrl C e node indes.js de novo
+    Cria-se então um script em package.json para utilizar o nodeman. 
+        "NomeDoScript":"nodeman Caminho/NomeDoArquivo", no nosso caso, 
+        "start" : "nodeman index.js", "src/index.js"
+
+Depois de instalar o knex, para conectar o banco de dados com a aplicação
+    npx knex init
+O knex vai criar um arquivo, nele você deve utilizar em 'client' o bando SQL q vc está usando (sqlite3)
+    e alterar o filename para o arquivo que vai armazanar o banco de dados. (extensão .sqlite)
+Criou uma arquivo só para as rotas "routes.js" e faz as alterações tanto no index.js quanto no routes.js para importar e exportar routes.
+
+Pensando nas entidades e funcionalidades,
+    No caso da proposta do site de ongs, cada ong é uma entidade, que pode se cadastrar, e os casos são os incidentes
+    Minhas entidades: usuário e postagens
+    funcionalidades:    
+        usuário: login, logout, cadastro, postar, alterar e deletar, listar postagens de um usuário, curtir outros posts.
+        Listar todos os casos, listar casos de um usuário específico
+
+no ambiente dev, as migrations (alterações no knex file e nova pasta criada) são o histórico de alterações no banco de dados
+Para criar uma migration, deve-se ir à pasta das migrations e digitar
+    npx knex migrate:make nomeDaMigration
+    Um novo arquivo js será criado.
+Sobre o knex, podemos ler as documentações presentes em http://knexjs.org
+Nesses arquivos de migration, há dois métodos. o up() e o down(). O up é o que eu quero que seja feito ao executar
+a migration, o down, é geralmente desfazer o que foi dfeito nessa migration, que costuma ser deletar coisas  rs
+    Após dizer o que acontece em cada método, podemos executar a migration com 
+        npx knex migrate:latest
+
+Fez-se alterações na routes, e, para conectar ao bd criou-se o connection.js na pasta do bd. Esse arquivo serve para a conexão com o banco de dados
+
+Exportou as funções das rotas para a pasta controller e, nos arquivos, importou o necessário.
+    Fizeram alterações no routes.js.
+
+                    Importei os comentários para cá.
+                    /**Rota / Recurso == caminho
+                    * Por exemplo, 
+                    * app.get('/users', ....)... No caso de 3333, eu acesso com localhost:3333/users 
+                    */
+                    /**Métodos HTTP
+                    * GET: Buscar/listar uma informação no back-end
+                    * POST: Criar uma informação no back-end
+                    * PUT: Alterar uma informação no back-end
+                    * DELETE: Deletar uma informação no back-end
+                    */
+                    /**tipos de parâmetros
+                    * Query Params: Parâmetros nomeados enviados na rota após '?' (filtros, paginação)
+                    *     Por exemplo app.get('/users/aula=2', ...)
+                    *     É utilizado '&' para colocar mais de um.
+                    * Route Params: Parâmetros utilizados para identificar recursos
+                    *     Por exemplo app.get('/users/:id', ...)
+                    *     Na hora de acesar, coloca o número, por exemplo.
+                    * Body Params: Corpo da requisição, utilizado para criar ou alterar recursos
+                    */
+No caso dos posts, o user_id não é recebido pelo body, e sim pelo header da requisição. Por isso há o 
+    request.header; também. No insomnia, é em outro lugar, onde tem "header", e não body. Geralmente, para login, é o header authorization.
+Para a route de deletar, a rota precisa do route param, para deletar somente o 'post' selecionado.
+
+Pesquisar sobre os status HTTP (http status code)
+    401: Não autorizado
+    204: Sucesso, porém sem conteúdo para enviar
+O send() significa enviar resposta sem corpo.
+
+Segundo a metodologia mvc, que está sendo utilizado, cada controller deve ter no máximo 5 métodos. Se há a necessidade
+de criar mais, ou 'repetidos', que são semelhantes, é aconselhado criar outro controller.
+    Métodos: listagem, unico item, criação, alteração e delete.
+
+Foi implementado um método simples de paginação, para limitar o número de posts que aparecem por pagina.
+O número total geralmente é retornado no header da resposta, e não no da requisição.
+    response.header('X-Total-Counts', count['count(*)']);
+
+O .join(...) serve para juntar duas tabelas dos bancos de dados, no caso, para quando mostrar cada post, mostrar
+mostrar também os dados so user que criou.
+    a partir disso, o .select('*') muda também porque há colunas com o mesmo nome ( a coluna id)
+        .select(['posts.*', 'users.username']);
+        No nosso caso, só queremos o username :)
+
+Adicionando o CORS
+    npm install cors
+    Importa o cors no index.js
+
+Criei um repositório no git 'https://github.com/rosantori/o-mural.git'
+e, dentro da pasta de backend o arquivo .gitignore
