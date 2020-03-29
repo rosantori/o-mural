@@ -39,7 +39,7 @@ export default function Posts() {
     }
     useEffect(() => {
         loadPosts();
-    }, [posts]);
+    }, []);
 
     return(
         <View style = {styles.container} >
