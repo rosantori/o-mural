@@ -33,7 +33,7 @@ module.exports = {
 
         const post = await connection('posts').where('id', id).select('user_id').first();
 
-        if(post.user_id != user_id) {
+        if(post.user_id !== user_id) {
             return response.status(401).json({error: 'Operation not permitted.'});
         }
 

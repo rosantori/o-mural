@@ -8,11 +8,11 @@ module.exports = {
         return response.json(users);
     },
     async create(request, response) {//o async é para esperar que isso seja realizado (o que está no await)
-        const {username, email, name} = request.body;
+        const {username, email, name, country} = request.body;
         const id = crypto.randomBytes(4).toString('HEX');
     
         await connection('users').insert({ 
-            id, username, email, name
+            id, username, email, name, country
         })
         return response.json({ id });
     }

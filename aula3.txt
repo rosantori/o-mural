@@ -1,0 +1,79 @@
+Limpando a estrutura:
+    Deletar alguns arquivos (na pasta frontend)
+        README.md
+        app.css
+        app.test.js
+        index.css
+        logo.svg
+        seviceworker.js
+        setuptest.js
+
+    No arquivo index.js, deletar as importações dos arquivos que foram deletados
+    No appp.js também, e fazer alteraçõs no corpo
+    Na pasta, public
+        robots, manifest.json, logos
+    No arquivo index.html, deletar algumas partes também.
+
+Usar na pasta frontend 
+    npm start
+
+REACT:
+    Componente: uma função que retorna html
+        Quando o html está escrito dentro de um arquivo JS, isso é chamado de 
+    JSX: ( Javascript XML )
+    Propriedades: Quase o mesma coisa que os atributos, em html
+        PESQUISAR SOBRE, não entendi direito
+    Estado: uma informação que vai ser contida pelo componente.
+        Toda vez que mudarmos um valor de variável, não usaremos variáveis comuns, usaremos estados.
+    Imutabilidade: Não podemos manipular variáveis de estado de forma direta, precisamos sobrepor a variável, usando o useState, que retorna um array
+        [value, SetValueFuncion]
+        Usaremos então o segundo retorno para alterar o valor de cada variável, 
+        chama a função SetValueFuncion(ValorDesejado);
+
+        Foi alterado :
+                import React, {useState} from 'react';
+                import Header from './Header';
+                import Logon from './pages/Logon';
+
+                function App() {
+                const [counter, setCounter] = useState(0);
+
+                function increment() {
+                    setCounter(counter+1);
+                }
+
+                return (
+                    <div>
+                    < Header> Contador:{counter} </Header>
+                    <button onClick = {increment}> Incrementar </button>
+                    </div>
+                );
+                }
+
+                export default App;
+
+    criar um arquivo global.css, fonte em https://fonts.google.com/
+
+
+    O ícone do "Não tenho cadatro' foi importado de um pacote de icones na internet
+        feathericons.com
+
+--icones disponíveis para o react
+        npm install react-icons 
+
+
+Olhar arquivos App.js, e principalmente os da pasta Logon.
+
+A partir da página de logon, é necessário criar as rotas, para acessar outras páginas, para isso, instalaremos:
+    npm install react-router-dom
+
+Para conectar o frontend com o backend:
+    Ir até a pasta do backend
+    Inicializar
+        npm start
+    Ir até o insomnia
+
+Instalar no projeto um cliente http
+    npm install axios
+Para fazer as chamadas api do cliente e obter resultado
+Após instalar o axios, em src do frontend, cria a pasta services 
