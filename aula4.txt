@@ -1,0 +1,29 @@
+Baixar o expo
+    npm install -g expo-cli
+Para iniciar o projeto
+    expo init mobile 
+    mobile, no caso, é a pasta que ele vai criar.
+Selecionar o template blank
+
+Entrar na pasta mobile e simbora
+
+Para mexer com rotas, vamos Para
+    http://reactnavigation.org
+
+    npm install @react-navigation/native
+    expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+    
+expo install constance
+
+expo install expo-mail-composer
+    doc.expo.io
+
+Para conectar a aplicação com a api 
+    acessar o backend
+        npm start
+    em mobile
+        npm install axios
+        npm install intl 
+    em App.js
+        import 'intl';
+        import 'intl/locale-data/jasonp/pt-BR';
