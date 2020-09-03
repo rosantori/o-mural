@@ -5,8 +5,7 @@ import {Link, useHistory} from 'react-router-dom';
 import './styles.css';
 import api from '../../services/api';
 
-import muralImg from '../../assets/mural.png';
-import logoImg from '../../assets/logo2.png';
+import muralImg from '../../assets/featherpen.png';
 import {FiLogIn} from 'react-icons/fi';
 
 
@@ -32,7 +31,7 @@ export default function Logon() {
         }
 
     }
-
+/*
     return (
         <div className="logon-container">
             <section className="form">
@@ -48,6 +47,29 @@ export default function Logon() {
                     <Link className="back-link" to="/register">
 
                         <FiLogIn size={16} color="c0c5ce"/>
+                        Não tenho cadastro
+                    </Link>
+                </form>
+            </section>
+            <img src={muralImg}  alt="Mural" className="src"/>
+        </div>
+    );*/
+
+    return (
+        <div className="logon-container">
+            <section className="form">
+                <h1 id="logoprincipal">MURAL</h1>
+                <form onSubmit= {handleLogon}>
+                    <h1>Faça seu logon</h1>
+                    <input 
+                        placeholder="Sua ID"
+                        value = {id}
+                        onChange={e => setId(e.target.value)}
+                    />
+                    <button type= "submit" className= "button" >Entrar</button>
+                    <Link className="back-link" to="/register">
+
+                        <FiLogIn size={16}/>
                         Não tenho cadastro
                     </Link>
                 </form>

@@ -5,7 +5,6 @@ import {FiArrowLeft} from 'react-icons/fi';
 import api from '../../services/api';
 import './styles.css';
 
-import logoImg from '../../assets/logo2.png';
 
 export default function Register() {
     const [name, setName] = useState(''); //O '' é para iniciar com valor vazio, string vazia
@@ -31,11 +30,10 @@ export default function Register() {
         <div className="register-container">
             <div className="content">
                 <section>
-                    <img src={logoImg} alt="o Mural" className="src"/>
+                    <h1 id="logoprincipal">MURAL</h1>
                     <h1>Cadastro</h1>
                     <p>Faça o seu cadastro e compartilhe suas histórias</p>
                     <Link className="back-link" to="/">
-
                         <FiArrowLeft size={16} color="c0c5ce"/>
                         Voltar
                     </Link>
@@ -46,8 +44,9 @@ export default function Register() {
                         value={name}
                         onChange = { e=> setName(e.target.value)}
                         />
-                    <input type = "email" pĺaceholder= "Email"
-                        value={email}
+                    <input type = "email"
+                        placeholder = "Email"
+                        value = {email}
                         onChange = { e=> setEmail(e.target.value) }
                         />
                     <div className="group">
@@ -58,7 +57,7 @@ export default function Register() {
                             onChange = { e=> setUsername(e.target.value)}
                             />
                         <input 
-                            className="Country"
+                            placeholder = "País"
                             value={country}
                             onChange = { e=> setCountry(e.target.value)}
                             />

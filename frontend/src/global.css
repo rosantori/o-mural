@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+/*
+PALETTE COLOR
+#473144 rgba(71,49,68, )
+#AF1B3F rgba(175,27,63, )
+#DF9B6D rgba(223,155,109, )
+#EFC69B rgba(239,198,155, )
+#CCB69B rgba(204,182,155, )
+*/
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +17,8 @@
 
 body {
     font: 400 14px Raleway, sans-serif;
-    background: #65737e;
+    /*background: #efc69b;*/
+    background-image: linear-gradient(#f2c2b6, #ffe6c9 25%, #f2c2b6) ;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -23,11 +33,24 @@ button {
 form input {
     width: 100%;
     height: 60px;
-
-    color: #3333;
-    border:1px solid #dcdce6;
+    color: #473144;
+    border:1px solid #ccb69b;
     border-radius: 8px;
     padding: 0 24px;
+}
+#logoprincipal {
+    font:700 120px Montserrat, semi-bold;
+    color: white;
+    background-color: #473144;
+    width: 480px;
+}
+#logo {
+    display: flex;
+    justify-content: center;
+    font:700 20px Montserrat, semi-bold;
+    color: white;
+    background-color: #473144;
+    width:110px;
 }
 
 form textarea {
@@ -35,9 +58,7 @@ form textarea {
     height: 60px;
     min-height: 140px;
     resize: vertical;
-
     color: #3333;
-    border:1px solid #dcdce6;
     border-radius: 8px;
     padding: 16px 24px;
     line-height: 24px;
@@ -46,7 +67,7 @@ form textarea {
 .button {
     width: 100%;
     height: 60px;
-    background: #d01F35;
+    background: rgba(71,49,68,0.5); /*#473144*/
     border: 0;
     border-radius: 8px;
     color: #ffffff;
@@ -69,11 +90,11 @@ form textarea {
     align-items: center;
     margin-top: 10px;
     margin-left: 5px;
-    color: #c0c5ce;
+    color: #ccb69b;
     font-size: 18px;
     text-decoration: none;
     font-weight: 500;
-    transition: opacity o.2s;
+    transition: opacity 0.2s;
 }
 .back-link svg {
     margin-right: 5px;

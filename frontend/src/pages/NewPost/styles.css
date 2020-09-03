@@ -1,10 +1,8 @@
-.new-ost -container{
+.newpost-container{
     width: 100%;
     max-width:1120px;
     height:100vh;
     margin: 0 auto;
-    margin-right: 20px;
-
     display:flex;
     align-items: center;
     justify-content: center;

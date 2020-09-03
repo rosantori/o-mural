@@ -1,6 +1,6 @@
 .profile-container {
     width:100%;
-    max-width: 1180px;
+    max-width: 100vw;
     padding: 0 30px;
     margin-left: 32px auto;
 }
@@ -17,6 +17,14 @@
 
 .profile-container header img{
     height: 64px;
+}
+
+.profile-container header h1 {
+    margin:0;
+    display:flex;
+    justify-content: center;
+    background-color: rgba(51,0,25,0.9);
+    border: 4px solid rgba(51,0,25,1);
 }
 
 .profile-container header a {

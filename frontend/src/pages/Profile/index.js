@@ -4,7 +4,6 @@ import {FiPower, FiTrash2} from 'react-icons/fi';
 
 import api from '../../services/api';
 
-import logoImg from '../../assets/logo2.png';
 
 import "./styles.css";
 
@@ -49,10 +48,10 @@ export default function Profile() {
     return (
         <div className="profile-container">
             <header>
-                <img src={logoImg} alt="o Mural" className="src"/>
+                <h1 id="logo">o MURAL</h1>
                 <span>Bem vindo(a), {user }!</span>
 
-                <Link to= "/posts/new" className="button">Cadastrar novo caso</Link>
+                <Link to= "/posts/new" className="button">Nova Postagem</Link>
                 <button onClick={handleLogout} className="button">
                     <FiPower size = {18} color = "#E020410" />
                 </button>

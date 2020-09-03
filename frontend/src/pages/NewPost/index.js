@@ -4,7 +4,6 @@ import {FiArrowLeft} from 'react-icons/fi';
 
 import api from '../../services/api';
 
-import logoImg from '../../assets/logo2.png';
 
 import "./styles.css";
 
@@ -37,7 +36,7 @@ export default function NewPost() {
         <div className="newpost-container">
             <div className="content">
                 <section>
-                    <img src={logoImg} alt="o Mural" className="src"/>
+                    <h1 id="logo">o MURAL</h1>
                     <h1>Escrever nova postagem</h1>
                     <p>Crie seu texto, seja criativo. </p>
                     <Link className="back-link" to="/profile">
@@ -51,7 +50,7 @@ export default function NewPost() {
                     value = {title}
                     onChange = {e => setTitle(e.target.value)}
                     />
-                    <textarea pĺaceholder="Texto" 
+                    <textarea placeholder="Texto" 
                     value = {description}
                     onChange = {e => setDescription(e.target.value)}
                     />
