@@ -44,5 +44,6 @@
 
 .newpost-container .content form input,
 .newpost-container .content form textarea {
+    color: #473144;
     margin-top: 8px;
 }

@@ -10,20 +10,20 @@ import {FiLogIn} from 'react-icons/fi';
 
 
 export default function Logon() {
-    const [id, setId] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const history = useHistory();
 
     async function handleLogon(e) {
         e.preventDefault();
 
         try {
-            const response = await api.post('sessions', {id});
+            const response = await api.post('sessions', {username, password});
             localStorage.setItem('user',response.data.name);
-            localStorage.setItem('userId', id);
-            console.log(
-                localStorage.getItem('user'),localStorage.getItem('userId')
-            );
-
+            localStorage.setItem('userID', response.data.id);
+            /*console.log(
+                localStorage.getItem('user'),localStorage.getItem('user')
+            );*/
             history.push('/profile');
         } catch (err) {
             alert(`Falha no login, tente novamente`);
@@ -31,29 +31,6 @@ export default function Logon() {
         }
 
     }
-/*
-    return (
-        <div className="logon-container">
-            <section className="form">
-                <img src={logoImg} alt="o Mural" className="src"/>
-                <form onSubmit= {handleLogon}>
-                    <h1>Faça seu logon</h1>
-                    <input 
-                        placeholder="Sua ID"
-                        value = {id}
-                        onChange={e => setId(e.target.value)}
-                    />
-                    <button type= "submit" className= "button" >Entrar</button>
-                    <Link className="back-link" to="/register">
-
-                        <FiLogIn size={16} color="c0c5ce"/>
-                        Não tenho cadastro
-                    </Link>
-                </form>
-            </section>
-            <img src={muralImg}  alt="Mural" className="src"/>
-        </div>
-    );*/
 
     return (
         <div className="logon-container">
@@ -62,9 +39,15 @@ export default function Logon() {
                 <form onSubmit= {handleLogon}>
                     <h1>Faça seu logon</h1>
                     <input 
-                        placeholder="Sua ID"
-                        value = {id}
-                        onChange={e => setId(e.target.value)}
+                        placeholder="Username"
+                        value = {username}
+                        onChange={e => setUsername(e.target.value)}
+                    />
+                    <input
+                        placeholder="Senha"
+                        value = {password}
+                        type = "password"
+                        onChange={e => setPassword(e.target.value)}
                     />
                     <button type= "submit" className= "button" >Entrar</button>
                     <Link className="back-link" to="/register">

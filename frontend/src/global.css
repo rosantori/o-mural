@@ -18,7 +18,9 @@ PALETTE COLOR
 body {
     font: 400 14px Raleway, sans-serif;
     /*background: #efc69b;*/
-    background-image: linear-gradient(#f2c2b6, #ffe6c9 25%, #f2c2b6) ;
+    background-image: linear-gradient(#f2c2b6, #ffe6c9 25%, #f2c2b6);
+    background-repeat:no-repeat; 
+    background-size: contain; 
     -webkit-font-smoothing: antialiased;
 }
 

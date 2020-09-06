@@ -11,6 +11,7 @@ routes.post('/sessions', SessionController.create);
 
 routes.get('/users', UserController.index );
 routes.post('/users', UserController.create);
+routes.delete('/users', UserController.delete);
 
 routes.post ('/posts', PostController.create);
 routes.get ('/posts', PostController.index);

@@ -10,17 +10,18 @@ export default function Register() {
     const [name, setName] = useState(''); //O '' é para iniciar com valor vazio, string vazia
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
-    const [country, setCountry ] = useState('');
+    const [password, setPassword ] = useState('');
 
     const history = useHistory();
 
     async function handleRegister(e) {
         e.preventDefault();
-        const data = {name, email, username, country};
+        const data = {name, email, username, password};
 
         try{
             const response = await api.post('users', data);
-            alert(`Seu ID de acesso: ${response.data.id}`);
+            alert(`Cadastro efetuado com sucesso.`);
+            //alert(`Seu ID de acesso: ${response.data.id}`);
             history.push('/');
         } catch (err) {
             alert(`Erro no cadastro, tente novamente`);
@@ -57,9 +58,10 @@ export default function Register() {
                             onChange = { e=> setUsername(e.target.value)}
                             />
                         <input 
-                            placeholder = "País"
-                            value={country}
-                            onChange = { e=> setCountry(e.target.value)}
+                            placeholder = "Senha"
+                            value={password}
+                            type="password"
+                            onChange = { e=> setPassword(e.target.value)}
                             />
                     </div>
                     <button type="submit" className = "button"> Cadastrar </button>

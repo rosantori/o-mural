@@ -8,6 +8,7 @@ It is created with:
 * Cors version: 2.8.5
 * Express version: 4.17.1
 * Expo version: 36.0.0
+* Bcrypt version: 5.0.0
 
 ## Running the app
 
@@ -24,7 +25,7 @@ $ cd <path to>/o-mural/frontend
 $ npm install
 $ npm start
 ```
-Oopen a new terminal and run the mobile version
+Open a new terminal and run the mobile version
  ```
  $ cd <path to>/o-mural/mobile
  $ npm install
@@ -37,7 +38,7 @@ Oopen a new terminal and run the mobile version
 |   |---(controllers)
 |   |   |   |---PostController.js
 |   |   |   |---ProfileController.js
-|   |   |   |---ProfileController.js
+|   |   |   |---SessionController.js
 |   |   |   |---UserController.js
 |   |---(database)
 |   |   |---(migrations)
@@ -108,6 +109,9 @@ Oopen a new terminal and run the mobile version
 |---package.json
 ```
 ## Future Improvements
-- Password for user
+- ~~Password for user~~
+- User configurations
+- Web feed page (all posts)
+- Friends and following people
 - Comments and likes
 - Text stylization
