@@ -1,0 +1,60 @@
+.logon-container {
+    width: 100%;
+    max-width:1120px;
+    height:100vh;
+    margin: 0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logon-container section.form {
+    width: 70vw;
+    padding-top:50px;
+    color: #473144;
+    max-width: 480px;
+}
+
+.logon-container section.form form {
+    display:flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.logon-container section.form form h1 {
+    font-size: 4vw;
+    margin-bottom: 32px;
+    color: #473144;
+    background: none;
+    border: none;
+    justify-content: flex-start;
+}
+.logon-container section.form input,
+.logon-container section.form button {
+    width:60vw;
+    max-width: 350px;
+} 
+.logon-container section.form .back-link{
+    color:#473144;
+}
+.logon-container .muralImg {
+    display: none;
+}
+
+@media only screen and (min-width:900px ) {
+    .logon-container {
+        justify-content: space-around;
+    }
+    .logon-container .muralImg {
+        display: block;
+        width: 50vw;
+        max-width: 600px;
+    }
+    .logon-container section.form input,
+    .logon-container section.form button {
+        max-width: 400px;
+    }
+    .logon-container section.form form h1{
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,80 @@
+.register-container {
+    width: 100%;
+    max-width:1120px;
+    height:100vh;
+    margin: 0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-container .content {
+    flex-direction: column;
+    width: 100%;
+    max-width: 80vw;
+    background: rgba(255,255,255,0.5);
+    box-shadow: 0 0 100x rgba(0 0 0 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 50px;
+}
+
+.register-container .content section {
+    display:flex;
+    flex-direction: column;
+    max-width: 70vw;
+    min-width: 330px;
+    justify-content: space-around;
+}
+.register-container .content section h1 {
+    height: 30%;
+    font-size: 4vw;
+    color:#473144;
+}
+
+.register-container .content section p {
+    font-size: 18px;
+    color: #473144;
+    line-height: 32px;
+}
+
+.register-container .content form {
+    width: 100%;
+    max-width: 430px;
+    
+}
+
+.register-container .content form .input-group {
+    margin-top: 1vh;
+}
+
+
+@media only screen and (min-width:800px) {
+    
+    .register-container .content {
+        flex-direction: row;
+        max-width: auto;
+        padding: 96px;
+    }
+    .register-container .content section {
+        margin-bottom: 0px;
+        padding-right: 2vw;
+    }
+    .register-container .content section h1 {
+        font-size: 32px;
+        margin: 32px 0 32px;
+    }
+
+    .register-container .content section {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        
+    }
+    .register-container .content section img
+    .register-container .content section h1 {
+        margin: 20px 0 20px;
+    }
+}
+
