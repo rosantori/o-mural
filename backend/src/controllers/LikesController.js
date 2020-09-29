@@ -39,6 +39,6 @@ module.exports =  {
             return response.status(400).send(err);
 
         }
-        return response.status(200).send(res? true : false);
+        return response.send(res? true : false);
     }
  }
