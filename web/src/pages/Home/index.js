@@ -8,6 +8,7 @@ import api from '../../services/api';
 
 import logoMural from '../../assets/o_mural.svg';
 import Star from '../../components/Star';
+import Posts from '../../components/Posts';
 
 export default function Home() {
 
@@ -15,10 +16,15 @@ export default function Home() {
     const userID = localStorage.getItem('userID');
 
     useEffect(()=>{
-        api.get('posts')
+        api.get('posts', {
+            headers: {
+                Authorization: userID,
+            }})
         .then(response=> {
             setPosts(response.data);
+            console.log(posts)
         })
+
     });
 
     function handleLogout () {
@@ -28,7 +34,9 @@ export default function Home() {
     return (
         <div className="home-container">
             <section className="menu">
-                <img id = "logoMural" src={logoMural} alt="o Mural"/>
+                <Link to='/' >
+                    <img id = "logoMural" src={logoMural} alt="o Mural"/>
+                </Link>
                 <div id = "loggedout" style = {{display : userID? "none" : "block"}} >
                     <Link className="menu-link" to="/register"> Register</Link>
                     <Link className="menu-link" style={{"paddingTop":"4px"}} to="/logon"><FiLogIn/></Link>
@@ -38,21 +46,9 @@ export default function Home() {
                     <Link onClick={handleLogout} className="menu-link" style={{"paddingTop":"4px"}} to ='/'><FiPower/></Link>
                 </div>
             </section>
-            <section className="posts">
-                <ul id = "post">
-                    {posts.map(post => (        
-                        <li key={post.id}>
-                            <strong>{post.title}</strong>
-                            <pre>{post.description}</pre>
-                            <div className="post-menu">
-                                <Star toggle="false" post_id = {post.id} user_id = {userID}/>
-                                <Link  to="/">@{post.username}</Link>
-                                <button id = "up" type = "button">
-                                    <FiThumbsUp/>
-                                </button>
-                            </div>
-                        </li>
-                    ))}
+            <section className = "posts">
+                <ul id = "post_area">
+                    {posts.map((post) => <Posts key = {post.id} userID = {userID}>{post}</Posts>)}
                 </ul>
             </section>
         </div>

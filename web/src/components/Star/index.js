@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './styles.css';
 import { FiStar} from 'react-icons/fi';
-
+import './styles.css';
 import api from '../../services/api';
 
 
@@ -16,19 +15,21 @@ class Star extends Component {
 
     async handleClick() {
         if(this.props.user_id) {
-            await this.setState({
-                isStarOn: !this.state.isStarOn
-            });
-
-            if(this.state.isStarOn) {
+            if(!this.state.isStarOn) {
+                this.setState({
+                    isStarOn: true
+                })
                 try {
                     await api.post('stars', {user_id : this.props.user_id,
-                         post_id : this.props.post_id});
-                } catch (err) {
-                    console.log("erro no post");
-                    console.log(err);
-                }
-            } else {
+                        post_id : this.props.post_id});
+                    } catch (err) {
+                        console.log("erro no post");
+                        console.log(err);
+                    }
+                } else {
+                this.setState({
+                    isStarOn: false
+                });
                 try {
                     await api.delete('stars', {data: {user_id : this.props.user_id,
                         post_id : this.props.post_id}});
@@ -37,6 +38,7 @@ class Star extends Component {
                     console.log(err);
                 }
             }
+
         } else {
             alert(`Please, login to favorite a post`);
         }
@@ -44,8 +46,8 @@ class Star extends Component {
 
     render() {
         return (
-            <button id = "star" onClick = {(e)=>this.handleClick(e)}>
-                <FiStar style = {this.state.isStarOn? {color: "red"} : {color : "black"}}/>
+            <button id = "star_component" onClick = {(e)=>this.handleClick(e)}>
+                <FiStar style = {this.props.user_id? (this.state.isStarOn? {color: "red"} : {color : "black"}) : {color:"black"}}/>
             </button>
         );
     }

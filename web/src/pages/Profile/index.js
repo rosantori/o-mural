@@ -26,7 +26,6 @@ export default function Profile() {
         })
     }, [userID]);
 
-//    console.log(posts);
     async function handleDeletePost(id) {
         try {
             await api.delete(`/posts/${id}`, {

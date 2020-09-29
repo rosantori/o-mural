@@ -1,0 +1,36 @@
+.header {
+    background-color: rgba(255,255,255, 0.2);
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5px;
+}
+.header:first-child {
+    align-items: center;
+}
+
+.header .header-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1vw;
+    width: 50%;
+}
+
+.header .header-bar .link {
+    text-decoration: none;
+    background-color: rgba(71,49,68, 0.6);
+    border-radius: 8px;
+    padding: 5px;
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+    align-self: center;
+    align-items: center;
+    display: flex;
+    height: 70%;
+}
+
+.header .header-bar .link:hover {
+    filter: opacity(0.7);
+}

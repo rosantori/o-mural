@@ -6,7 +6,7 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import NewPost from './pages/NewPost';
 
-import Home from './pages/Home';
+import Home from './pages/NewHome';
 
 export default function Routes() {
     return (

@@ -1,0 +1,33 @@
+#header-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+}
+#header-menu .header-menu {
+    position:absolute;
+    top: 30px;
+    right: 0px;
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+#header-menu .link {
+    width: 80px;
+    border-radius: 0;
+    text-align: center;
+}
+
+#header-menu #avatar-btn {
+    position: relative;
+    border: none;
+}
+
+#header-menu .header-menu button {
+    border: none;
+    width: 100%;
+    border: none;
+}

@@ -27,7 +27,7 @@
 .home-container .menu  div .menu-link + .menu-link{
     margin-left: 6px;
 }
-.home-container .posts ul {
+.home-container section.posts ul {
     margin-left:10px;
     margin-right: 10px; 
 
